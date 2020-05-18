@@ -1,0 +1,85 @@
+.cl-back-button{
+    background: url('../../../assets/back_white.png') center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 30px;
+    color:black;
+    height: 30px;
+    outline: 0;
+    box-shadow: 0 0 0 0;
+    margin-right: 15px;
+}
+
+
+.TitleHeader{
+    width: 100%;
+    // padding: 0 10px 0 10px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+    // background-color: blue;
+}
+.TitleText{
+    display: inline-flex;
+    text-align:left;
+    font-size: 19px;
+    width: 81%;
+    color: #ffffff;
+    // font-weight: 700;
+    align-items: center;
+}
+
+.registration-main{
+    margin-top: 5%;
+    width: 100%;
+    border: 1px solid red;
+    }
+    mat-card{
+    min-width: 80%;
+    }
+    
+    .submitButton{
+   
+        height: 48px;	
+        width: 94%; 
+        //  margin-left: 15%; 
+        // margin-right: 15%;
+        border-radius: 25px;	
+        background-color: #2e2d2d;
+        color: #FFFFFF;	
+        font-family: 'Roboto',sans-serif;	
+        font-size: 15px;	
+        // position: fixed;
+        // bottom: 10px;
+        // right: 10px;
+    }
+ 
+
+// .new-background-color{
+//     --background: #494747;
+//   }
+
+  .cl_table_title_css{
+      font-size: 13px;
+      color: rgb(56, 55, 55);
+  }
+
+  .cl_table_content_css{
+      font-size: 12px;
+  }
+
+
+.loginButton{
+    background-color: rgb(22, 134, 185);
+    color: white;
+    width:100%;
+    position: fixed;
+    bottom:0px;
+    border-radius:2px;
+    //  margin-left:4%; 
+    //  margin-right:4%;
+      padding-top:15px;
+      padding-bottom: 15px; 
+    font-size:18px;
+  }

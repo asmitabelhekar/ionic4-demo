@@ -1,0 +1,22 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-row>
+      <ion-col size="1">
+        <button ion-button class="cl-back-button" (click)="goBackword()" style="color:white;margin:7px"></button>
+      </ion-col>
+      <ion-col size="11" class="TitleHeader TitleText">
+        <ion-title style="font-size:20px; margin-left:5px">Internet Connection</ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+
+<img src="../../../assets/cloud.png"  class="cl_no_connection"/>
+<h1 align="center">Ooops!</h1>
+<label style="margin-left:20%; margin-right:20%;">No internet connection</label><br />
+<label style="margin-left:10%; margin-right:10%;">Please check your internet setting.</label><br /><br />
+<button mat-raised-button class="loginButton" (click)="checkConnection()">Try Again</button>
+
+</ion-content>

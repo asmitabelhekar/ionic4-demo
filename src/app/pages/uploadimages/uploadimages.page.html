@@ -1,0 +1,104 @@
+<ion-header>
+  <ion-toolbar class="new-background-color">
+    <ion-row>
+      <ion-col size="1">
+        <button ion-button class="cl-back-button" (click)="goBackword()" style="color:white;margin:7px"></button>
+      </ion-col>
+      <ion-col size="11" class="TitleHeader TitleText">
+        <ion-title style="font-size:20px; margin-left:5px">Upload Images</ion-title>
+      </ion-col>
+    </ion-row>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content>
+  <h5 style="color:black; margin-left:4%; margin-top:5%">Upload Shop Images</h5>
+  <ion-row style="width:100%">
+
+    <ion-col size="12">
+      <!-- <mat-label *ngIf="profilePic != '' " style="margin-left:2.5%;">Image</mat-label> -->
+
+      <ion-row fxLayout="row" fxLayoutAlign="center center" >
+        
+        <div
+          style="height:200px;width:95%;border-radius:5px;background-color: white;border : 1px solid rgb(199, 196, 196)"
+          fxLayout="column" fxLayoutAlign="center center"
+          onclick="document.getElementById('image_upload1').click()">
+          <ion-icon *ngIf="firstImage == '' " name="camera" style="width:40%; height:40%; margin-top:15px;color:rgb(196, 184, 184)">
+          </ion-icon>
+          <img *ngIf="firstImage != '' " src="{{firstImage}}"
+            style="width:100%;border-radius:5px; height:100%;" />
+
+
+          <input style="display: none;" id="image_upload1" type="file" (change)="detectEventGallery($event, 1)">
+
+          <div *ngIf="firstImage == '' " style="margin-top:12px;color: black;width:100%;margin-bottom:15px"
+            fxLayoutAlign="center">
+            <label type="file">Upload Shop First Image</label>
+          </div>
+        </div>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+
+  <ion-row style="width:100%">
+    <ion-col size="12">
+      <!-- <mat-label *ngIf="profilePic != '' " style="margin-left:2.5%;">Image</mat-label> -->
+
+      <ion-row fxLayout="row" fxLayoutAlign="center center" style="margin-top:5px">
+
+        <div
+          style="height:200px;width:95%;border-radius:5px;background-color: white;border : 1px solid rgb(199, 196, 196)"
+          fxLayout="column" fxLayoutAlign="center center"
+          onclick="document.getElementById('image_upload2').click()">
+          <ion-icon *ngIf="secondImage == '' " name="camera" style="width:40%; height:40%; margin-top:15px;color:rgb(196, 184, 184)">
+          </ion-icon>
+          <img *ngIf="secondImage != '' " src="{{secondImage}}"
+            style="width:100%;border-radius:5px; height:100%;" />
+
+
+          <input style="display: none;" id="image_upload2" type="file" (change)="detectEventGallery($event, 2)">
+
+          <div *ngIf="secondImage == '' " style="margin-top:12px;color: black;width:100%;margin-bottom:15px"
+            fxLayoutAlign="center">
+            <label type="file">Upload Shop Second Image</label>
+          </div>
+        </div>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+
+  <h5 style="color:black; margin-left:4%; ">Upload Visiting card</h5>
+  <ion-row style="width:100%; margin-top:5px">
+    <ion-col size="12">
+      <!-- <mat-label *ngIf="profilePic != '' " style="margin-left:2.5%;">Image</mat-label> -->
+
+      <ion-row fxLayout="row" fxLayoutAlign="center center" style="margin-top:5px">
+
+        <div
+          style="height:200px;width:95%;border-radius:5px;background-color: white;border : 1px solid rgb(199, 196, 196)"
+          fxLayout="column" fxLayoutAlign="center center"
+          onclick="document.getElementById('image_upload3').click()">
+          <ion-icon *ngIf="thirdImage == '' " name="camera" style="width:40%; height:40%; margin-top:15px;color:rgb(196, 184, 184); ">
+          </ion-icon>
+          <img *ngIf="thirdImage != '' " src="{{thirdImage}}"
+            style="width:100%;border-radius:5px; height:100%;" />
+
+
+          <input style="display: none;" id="image_upload3" type="file" (change)="detectEventGallery($event, 3)">
+
+          <div *ngIf="thirdImage == '' " style="margin-top:12px;color: black;width:100%;margin-bottom:15px"
+            fxLayoutAlign="center">
+            <label type="file">Upload Visiting card</label>
+          </div>
+        </div>
+      </ion-row>
+    </ion-col>
+  </ion-row>
+
+  <div fxLayout="row" fxLayoutAlign="center center">
+    <button mat-raised-button class="loginButton"
+      (click)="addDealerData()"><b>Next</b></button>
+
+  </div>
+</ion-content>

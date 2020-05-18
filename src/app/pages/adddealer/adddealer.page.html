@@ -1,0 +1,218 @@
+<ion-header class="new-background-color">
+  <ion-toolbar class="new-background-color">
+    <div fxLayout="row">
+      <ion-icon name="arrow-back" style="width:30px; height:30px; margin:10px ;color : #ffffff" (click)="goBackword()">
+      </ion-icon>
+      <ion-label class="TitleHeader TitleText" style="font-size: 20px;">
+        Add Dealer
+      </ion-label>
+    </div>
+
+    <!-- <ion-row>
+      <ion-col size="2">
+        <ion-icon name="arrow-back" style="width:30px; height:30px; margin:10px ;color : #000000"
+          (click)="goBackword()">
+        </ion-icon>
+      </ion-col>
+      <ion-col size="10">
+        <ion-label class="TitleHeader TitleText" style="font-size: 17px;">
+          Add Dealer
+        </ion-label>
+      </ion-col>
+
+    </ion-row> -->
+
+  </ion-toolbar>
+</ion-header>
+<ion-content style="height: 115%;width:100%;background-color: #F1F4F9;">
+
+  <div style="height:115%;background-color: #F1F4F9; margin-top:-30px">
+    <form #userForm="ngForm" style="width:100%;background-color: #F1F4F9;height:115%;">
+
+      <div fxLayout="column" fxLayoutAlign="center center" style="width: 100%;">
+
+        <!-- <ion-row style="width:100%">
+          <ion-col size="12">
+
+            <ion-row fxLayout="row" fxLayoutAlign="center center" style="margin-top:5px">
+
+              <div
+                style="height:200px;width:95%;border-radius:5px;background-color: white; margin-top:10%"
+                fxLayout="column" fxLayoutAlign="center center"
+                onclick="document.getElementById('image_upload').click()">
+                <ion-icon *ngIf="profilePic == '' " name="camera" style="width:40%; height:40%; margin-top:15px;color:rgb(196, 184, 184)">
+                </ion-icon>
+                <img *ngIf="profilePic != '' " src="{{profilePic}}"
+                  style="width:100%;border-radius:5px; height:100%;" />
+
+
+                <input style="display: none;" id="image_upload" type="file" (change)="detectEventGallery($event)">
+
+                <div *ngIf="profilePic == '' " style="margin-top:12px;color: black;width:100%;margin-bottom:15px"
+                  fxLayoutAlign="center">
+                  <label type="file">Upload Pic</label>
+                </div>
+              </div>
+            </ion-row>
+          </ion-col>
+        </ion-row> -->
+
+
+
+        <ion-row style="width:100%;margin-top:15px">
+          <ion-col size="12">
+            <ion-row fxLayout="row" fxLayoutAlign="center center">
+              <mat-form-field style="width:95%;" appearance="fill" class="mat-input-underline">
+                <mat-label style="color:black; ">Full Name</mat-label>
+                <input matInput class="form-control " name="fname" required [(ngModel)]="dealerModel.fname"
+                  #fname="ngModel" pattern="[a-zA-z   ]+$" />
+                <mat-error>
+                  <div class="form-group">
+                    <div *ngIf="fname.invalid && (fname.dirty || fname.touched)">
+                      Full Name Is Requird
+                    </div>
+                  </div>
+                </mat-error>
+
+              </mat-form-field>
+            </ion-row>
+
+
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="width:100%">
+          <ion-col size="12">
+            <ion-row fxLayout="row" fxLayoutAlign="center center">
+              <mat-form-field style="width:95%" appearance="fill">
+                <mat-label style="color:black; background-color: white;">User Name</mat-label>
+                <input matInput class="form-control " name="uname" required [(ngModel)]="dealerModel.uname"
+                  #uname="ngModel" pattern="[a-zA-z   ]+$" />
+                <mat-error>
+                  <div class="form-group">
+                    <div *ngIf="uname.invalid && (uname.dirty || uname.touched)">
+                      User Name Is Requird
+                    </div>
+                  </div>
+                </mat-error>
+
+              </mat-form-field>
+            </ion-row>
+
+
+          </ion-col>
+        </ion-row>
+
+
+
+
+        <ion-row style="width:100%">
+
+          <ion-col size="12">
+            <ion-row fxLayout="row" fxLayoutAlign="center center">
+              <mat-form-field style="width:95%;" appearance="fill">
+                <mat-label style="color:black; background-color: white;">Mobile</mat-label>
+                <input matInput class="form-control " name="mobile" type="tel" minlength="10" maxlength="10" id="mobile"
+                  required [(ngModel)]="dealerModel.mobile" #mobile="ngModel" pattern="[0-9]+$" />
+
+                <mat-error>
+                  <div class="form-group">
+                    <div *ngIf="mobile.invalid && (mobile.dirty || mobile.touched)">
+                      Mobile Number Is Requird
+                    </div>
+
+                  </div>
+                </mat-error>
+
+              </mat-form-field>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="width:100%">
+          <ion-col size="12">
+            <ion-row fxLayout="row" fxLayoutAlign="center center">
+              <mat-form-field style="width:95%;" appearance="fill">
+                <mat-label style="color:black; background-color: white;">Email</mat-label>
+                <input matInput class="form-control " name="email" [(ngModel)]="dealerModel.email" #email="ngModel"
+                  pattern="[A-Za-z0-9._%+-]+@[a-z0-9.-]+\.[a-z]{2,4}$" />
+                <mat-error>
+                  <div class="form-group">
+                    <div *ngIf="email.invalid && (email.dirty || email.touched)">
+                      Email Is Requird
+                    </div>
+                  </div>
+                </mat-error>
+
+              </mat-form-field>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+
+
+        <ion-row style="width:100%">
+          <ion-col size="12">
+            <ion-row fxLayout="row" fxLayoutAlign="center center">
+              <mat-form-field style="width:95%" appearance="fill">
+                <mat-label style="color:black; background-color: white;">Password</mat-label>
+                <input matInput class="form-control " name="password" required [(ngModel)]="dealerModel.password"
+                  #password="ngModel" />
+                <mat-error>
+                  <div class="form-group">
+                    <div *ngIf="password.invalid && (password.dirty || password.touched)">
+                      Password Is Requird
+                    </div>
+                  </div>
+                </mat-error>
+
+              </mat-form-field>
+            </ion-row>
+
+
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="width:100%">
+          <ion-col size="12">
+            <ion-row fxLayout="row" fxLayoutAlign="center center">
+              <mat-form-field style="width:95%;" appearance="fill">
+                <mat-label style="color:black; background-color: white;">Address</mat-label>
+                <input matInput placeholder="Location" [(ngModel)]="loc.location" ngx-google-places-autocomplete
+                  [options]='options' #placesRef="ngx-places" name="city"
+                  (onAddressChange)="handleAddressChange($event)">
+              </mat-form-field>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+
+        <ion-row style="margin-top:-10px;width:100%; margin-bottom:5%">
+          <ion-col size="12">
+            <ion-row fxLayout="row" fxLayoutAlign="center center">
+              <mat-form-field style="width:95%;" appearance="fill">
+                <mat-label style="color:black;">Comment</mat-label>
+                <textarea matInput class="form-control " name="comment" [(ngModel)]="dealerModel.comment"
+                  #comment="ngModel" pattern="[a-zA-z  ,-.]+$"></textarea>
+              </mat-form-field>
+            </ion-row>
+          </ion-col>
+        </ion-row>
+        
+        <div *ngIf="showMap == 0 " id="map_canvas" style="margin-bottom:15%; margin-top:15px"></div>
+       
+
+
+      </div>
+
+
+
+      <div fxLayout="row" fxLayoutAlign="center center">
+        <button mat-raised-button [disabled]="mobile.invalid || fname.invalid || uname.invalid " class="loginButton"
+          (click)="addDealerData(dealerModel)"><b>Next</b></button>
+
+      </div>
+    </form>
+  </div>
+
+
+
+</ion-content>

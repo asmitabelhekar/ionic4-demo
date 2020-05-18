@@ -1,7 +1,7 @@
 {
-  "name": "aplink",
+  "name": "gdp",
   "integrations": {
-    "capacitor": {}
+    "cordova": {}
   },
   "type": "angular"
 }

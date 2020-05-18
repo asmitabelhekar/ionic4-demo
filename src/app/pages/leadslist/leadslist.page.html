@@ -1,0 +1,75 @@
+<ion-header  class="new-background-color">
+  <ion-toolbar  class="new-background-color">
+    <ion-buttons slot="start" style="color:white">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="font-size:20px">Leads</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-color: #F1F4F9;">
+  <div style="background-color:#F1F4F9;z-index: 1;position:fixed;top:45px;width:100%;padding-bottom:10px;"> 
+    <div fxLayoutAlign="center center" style="margin-top:20px">
+      <ion-row style="width:95%; border : 1px solid rgb(117, 115, 115); border-radius: 15px; margin-left:10px;margin-right:10px;margin-bottom:5px;background-color: white;">
+        <ion-col size="1">
+          <ion-icon name="search" style="width:20px; height: 20px;margin-top:5px"></ion-icon>  
+          </ion-col>
+        <ion-col size="11" >
+          <input type="text" [(ngModel)]="getSearchKey" (input)="OnInput(getSearchKey)" placeholder="Search" style="width:96%;margin-right:2%;"/>
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+  
+<div style="background-color: #F1F4F9;margin-top:65px;padding-bottom:20px;" *ngIf="showData == 1 ">
+
+  <ion-card style="border-radius: 10px; margin:10px" *ngFor="let item of leadList">
+    <ion-card-content>
+    
+      <ion-row>
+        <ion-col size="1">
+          <ion-icon name="person" style="color:grey; margin-left:10px; margin-top:2px"> </ion-icon>
+        </ion-col>
+        <ion-col size="11">
+          <label class="label_color ">{{item.name}}</label>
+        </ion-col>
+      </ion-row>
+    
+      <ion-row>
+        <ion-col size="1">
+          <ion-icon name="mail" style="color:grey; margin-left:10px; margin-top:2px"> </ion-icon>
+        </ion-col>
+        <ion-col size="11">
+          <label class="label_color ">{{item.email}}</label>
+        </ion-col>
+      </ion-row>
+    
+      <ion-row>
+        <ion-col size="1">
+          <ion-icon name="call" style="color:grey; margin-left:10px; margin-top:2px"> </ion-icon>
+        </ion-col>
+        <ion-col size="11">
+          <label class="label_color ">{{item.mobile}}</label>
+        </ion-col>
+      </ion-row>
+    </ion-card-content>
+    
+    
+        <!-- <ion-card-content>
+         
+            
+          <label class="label_color "><ion-icon name="person" style="color:grey; margin-top: 15px"> </ion-icon>{{item.name}}</label><br />
+          <label class="label_color "><ion-icon name="mail" style="color:grey; margin-top: 5px"> </ion-icon>  {{item.email}}</label><br />
+          <label class="label_color "><ion-icon name="call" style="color:grey; margin-top: 5px"> </ion-icon>  {{item.mobile}}</label><br />
+        </ion-card-content> -->
+      </ion-card>
+   
+</div>
+  
+<div>
+  <button (click)="addLeads()" align="center" style="position:fixed; width:60px;height:60px;right:30px; bottom:20px; background-color: rgb(22, 134, 185);border-radius: 50%;"><ion-icon style="width:30px; height: 30px;color:white" name="add"></ion-icon></button>
+</div>
+<div *ngIf="showData == 0 ">
+  <h3>No records found.</h3>
+</div>
+</ion-content>

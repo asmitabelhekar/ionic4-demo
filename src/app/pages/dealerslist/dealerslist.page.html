@@ -1,0 +1,93 @@
+<ion-header class="new-background-color">
+  <ion-toolbar class="new-background-color">
+    <ion-buttons slot="start" style="color:white">
+      <ion-menu-button></ion-menu-button>
+    </ion-buttons>
+    <ion-title style="font-size:20px">Dealers</ion-title>
+  </ion-toolbar>
+</ion-header>
+
+<ion-content style="background-color: #F1F4F9;">
+
+ 
+  <div style="background-color:#F1F4F9;z-index: 1;position:fixed;top:45px;width:100%;padding-bottom:5px;">
+    <div fxLayoutAlign="center center" style="margin-top:20px">
+      <ion-row
+        style="width:95%; border : 1px solid rgb(117, 115, 115); border-radius: 15px; margin-left:10px;margin-right:10px;margin-bottom:5px;background-color: white;">
+        <ion-col size="1">
+          <ion-icon name="search" style="width:20px; height: 20px;margin-top:5px"></ion-icon>
+        </ion-col>
+        <ion-col size="11">
+          <input type="text" [(ngModel)]="getSearchKey" (input)="OnInput(getSearchKey)" placeholder="Search"
+            style="width:96%;margin-right:2%;" />
+        </ion-col>
+      </ion-row>
+    </div>
+  </div>
+
+  <div class="cl_dealer_list_css" *ngIf="showData == 1 ">
+    <div class="cl_div_css"></div>
+    <ion-card *ngFor="let item of dealerList" class="cl_card_css">
+      <div fxLayout="row" class="width100">
+        <div style="width:30%;height:100%">
+          <img *ngIf="item.image == '' || item.image == null || item.image == undefined"
+            src="../../../assets/noimage.png" class="width100" />
+          <img *ngIf="item.image != '' " src="{{item.image}}" class="width100" />
+        </div>
+        <div style="width:68%;margin-left:2%">
+
+          <ion-row style="margin-top:10px">
+            <ion-col size="1">
+              <ion-icon name="person" class="cl_icon_css"> </ion-icon>
+            </ion-col>
+            <ion-col size="11">
+              <label class="label_color ">{{item.name}}</label>
+            </ion-col>
+          </ion-row>
+
+          <ion-row>
+            <ion-col size="1">
+              <ion-icon name="call" class="cl_icon_css"> </ion-icon>
+            </ion-col>
+            <ion-col size="11">
+              <label class="label_color ">{{item.mobile}}</label>
+            </ion-col>
+          </ion-row>
+
+
+          <ion-row>
+            <ion-col size="1">
+              <ion-icon name="mail" class="cl_icon_css"> </ion-icon>
+            </ion-col>
+            <ion-col size="11">
+              <label class="label_color ">{{item.email}}</label>
+            </ion-col>
+          </ion-row>
+
+          <ion-row *ngIf="item.address != '' || item.address != null || item.address != undefined">
+            <ion-col size="1">
+              <ion-icon name="home" class="cl_icon_css"> </ion-icon>
+            </ion-col>
+            <ion-col size="11">
+              <label class="label_color ">{{item.address}} {{item.city}} {{item.state}} {{item.country}}
+                {{item.pincode}}</label>
+            </ion-col>
+          </ion-row>
+
+        </div>
+      </div>
+     
+    </ion-card>
+  </div>
+
+  <div>
+    <button (click)="addDealer()" align="center" class="cl_submit_css">
+      <ion-icon style="width:30px; height: 30px;color:white" name="add"></ion-icon>
+    </button>
+  </div>
+
+
+  <div *ngIf="showData == 0 ">
+    <h3>No records found.</h3>
+  </div>
+</ion-content>

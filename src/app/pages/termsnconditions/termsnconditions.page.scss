@@ -1,0 +1,100 @@
+.TitleHeader{
+    width: 100%;
+    padding: 0 10px 0 10px;
+    height: 50px;
+    display: inline-flex;
+    align-items: center;
+}
+.TitleText{
+    display: inline-flex;
+    text-align:left;
+    font-size: 1.5rem;
+    width: 70%;
+    color: black;
+    font-weight: 700;
+    align-items: center;
+}
+.TitleSider{
+    display: inline-block;
+    text-align:right;
+    font-size: 1rem;
+    font-weight: 600;
+    width: 100%;
+}
+.BackButton{
+    // background: url('../../../assets/Back.png') center;
+    background-size: cover;
+    background-position: center;
+    background-repeat: no-repeat;
+    width: 30px;
+    height: 30px;
+    outline: 0;
+}
+#map_canvas{
+    width:100%;
+    height: 40vh;
+}
+.LocationContainer{
+    width: 100vw;
+    padding: 21px 22px 0 23px;
+    height: 41vh;
+    overflow-y: auto !important;
+    
+}
+.FullWidth{
+    width:100%;
+    // margin-top: 10px;
+}
+.Manual{
+    color: #000000;	
+    font-family: 'Roboto',sans-serif;	
+    font-size: 20px;	
+    font-weight: 500;	
+    letter-spacing: 0.15px;	
+    line-height: 26px;
+    margin-top: 20px;
+    margin-bottom: 0;
+}
+.SubmitDivFull{
+    width: 100%;
+    height: 70px;
+    // position: fixed;
+    // bottom: 0;
+    display: inline-flex;
+    align-items: center;
+    z-index: 1;
+}
+.ButtonFillContent{
+    width: 100%;
+    padding: 25px 20px 20px 20px;
+    // border: 1px solid black;
+}
+.ActionDiv{
+    width: 100%;
+    display: inline-block;
+    align-items: center;
+    text-align: right;
+}
+.LogoutBtn{
+    box-sizing: border-box;	
+    height: 45px;	
+    width: 131px;	
+    border-radius: 25px;	
+    background-color: #FFFFFF;
+    color: #D73C56;	
+    font-family: 'Roboto',sans-serif;	
+    font-size: 15px;	
+    font-weight: 500;	
+    letter-spacing: 0.8px;	
+    line-height: 19px;
+}
+.MyLocation{
+    width:50px;
+    height:50px;
+    position: absolute;
+    right: 19px;
+    top: 34%;
+    border-radius: 50%;
+    padding: 14px;
+    background-color: #FFFFFF;
+}

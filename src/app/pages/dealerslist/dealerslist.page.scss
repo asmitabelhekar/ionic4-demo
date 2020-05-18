@@ -1,0 +1,61 @@
+.label_color{
+    color:black;
+    font-size:15px;
+   
+}
+
+.padding{
+    padding : 5px;
+}
+
+input {
+    border: none;
+  }
+  
+  
+  input:focus {
+    outline: none;
+  }
+
+  .cl_dealer_list_css{
+    background-color: #F1F4F9;
+    width:100%;
+    height:100%;
+    margin-top:45px;
+    padding-bottom:20px;
+  }
+
+  .cl_div_css{
+    height:10px;
+    background-color:#F1F4F9;
+  }
+
+  .cl_card_css{
+    margin:10px; 
+    border-radius:10px;
+    min-height: 120px;
+     max-height: 190px;
+     height:100%; 
+    margin-top:15px;
+  }
+
+  .width100{
+    width:100%;
+    height:100%;
+  }
+
+  .cl_icon_css{
+    color:grey;
+     margin-right:20px;
+     margin-top:2px;
+  }
+
+  .cl_submit_css{
+    position:fixed;
+     width:60px;
+     height:60px;
+     right:30px;
+      bottom:20px;
+       background-color: rgb(22, 134, 185);
+    border-radius: 50%;
+  }
